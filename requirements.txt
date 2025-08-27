@@ -1,0 +1,11 @@
+streamlit
+torch
+torchvision
+torchaudio
+onnx
+onnxruntime
+numpy
+pandas
+matplotlib
+scikit-learn
+tqdm
