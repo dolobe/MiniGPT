@@ -782,7 +782,7 @@ with st.sidebar:
     src_mode = st.radio("Source du corpus", ["Upload (Drag & Drop)", "Chemin local"], index=0)
 
     if src_mode == "Upload (Drag & Drop)":
-        uploaded = st.file_uploader("Déposez votre fichier .txt (UTF-8)", type=["txt"], accept_multiple_files=True)
+        uploaded = st.file_uploader("Déposez votre fichier .txt (UTF-8)", type=["txt"], accept_multiple_files=False)
         target_name = st.text_input("Nom de sauvegarde (dans /data)", value="uploaded_corpus.txt")
         if uploaded is not None:
             saved = ensure_uploaded_saved(uploaded, os.path.join(DATA_DIR, target_name))
