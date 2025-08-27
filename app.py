@@ -698,7 +698,7 @@ def auth_login_page():
         if _verify_password(pwd, u["salt"], u["hash"]):
             st.session_state["auth_user"] = {"email": email, "role": u.get("role", "user"), "login_at": now_iso()}
             st.success("Connexion réussie !")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Mot de passe incorrect.")
     return False
