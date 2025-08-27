@@ -4,5 +4,11 @@
     "hash": "b15ac7ff802ffcb0a86c543fba503414df523790ff27be11b15e7539a79e653a",
     "role": "admin",
     "created_at": "2025-08-27T11:27:14"
+  },
+  "test@gmail.com": {
+    "salt": "dZ3i4R8t1Vq-GCugbpa69w",
+    "hash": "342e39fe5006a543013e038dd40e9995bac88ac8be38e6c67e05c33a40f5ed4b",
+    "role": "admin",
+    "created_at": "2025-08-27T15:22:22"
   }
 }

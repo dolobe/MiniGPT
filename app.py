@@ -1,27 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Streamlit MiniGPT – v2
-======================
-
-Grand refactor d'une démo MiniGPT avec :
-
-- ⚙️ Double méthode d'import/lecture du corpus :
-  1) **Drag & Drop** via `st.file_uploader` (gestionnaire de fichiers local, manuel)
-  2) **Chemin local** (p.ex. `data/wiki_fr_5GB.txt`)
-- 🔒 **Page d'authentification** (login / inscription, hash + salt, fichiers JSON)
-- 💾 **Système de sauvegardes** amélioré (autosave de checkpoints, snapshots métriques,
-  export CSV/JSON, boutons de téléchargement, reprise robuste)
-- 🎛️ **Interface Streamlit améliorée** (thème clair/sombre, onglets, métriques temps réel,
-  graphiques d'entraînement, logs, panneau d'aide étendu, styles CSS)
-- 🧱 **Architecture modulaire** en un seul fichier pour faciliter le copier/coller
-- 🧠 **Modèle GPT (decoder-only) au niveau caractère**
-
-Remarques :
-- Cette appli est conçue pour être **copiable** dans un fichier `streamlit_app.py` unique.
-- Aucun accès réseau n'est requis pour la démo (entraînement local seulement).
-- Les dépendances typiques : `torch`, `numpy`, `streamlit`.
-
-"""
 
 # =====================================================================
 # Imports
@@ -53,6 +29,8 @@ try:
     import streamlit as st
 except Exception as e:
     raise RuntimeError("Streamlit est requis : pip install streamlit") from e
+st.set_page_config(page_title="MiniGPT (FR) – v2", page_icon="🤖", layout="wide")
+
 
 # =====================================================================
 # Thème & CSS – petite touche UI
@@ -769,7 +747,7 @@ def auth_gate():
 # =====================================================================
 # Streamlit – App shell
 # =====================================================================
-st.set_page_config(page_title="MiniGPT (FR) – v2", page_icon="🤖", layout="wide")
+# st.set_page_config(page_title="MiniGPT (FR) – v2", page_icon="🤖", layout="wide")
 
 # Gate auth
 auth_gate()
