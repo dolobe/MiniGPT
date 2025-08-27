@@ -1,0 +1,8 @@
+{
+  "admin@example.com": {
+    "salt": "demo",
+    "hash": "b15ac7ff802ffcb0a86c543fba503414df523790ff27be11b15e7539a79e653a",
+    "role": "admin",
+    "created_at": "2025-08-27T11:27:14"
+  }
+}

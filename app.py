@@ -361,7 +361,7 @@ class GPTBlock(nn.Module):
 
 class MiniGPT(nn.Module):
     def __init__(self, vocab_size: int, context: int = 256, n_embed: int = 256, n_layers: int = 4,
-                 n_heads: int = 8, ff_mult: int = 4, dropout: float = 0.1):
+                n_heads: int = 8, ff_mult: int = 4, dropout: float = 0.1):
         super().__init__()
         self.context = context
         self.tok_emb = nn.Embedding(vocab_size, n_embed)
@@ -605,7 +605,7 @@ def format_history(history: List[Tuple[str, str]], user_msg: str) -> str:
 
 
 def generate_reply(user_msg: str, history: List[Tuple[str, str]], max_new_tokens: int = 256,
-                   temperature: float = 0.9, top_k: Optional[int] = 50, top_p: float = 0.95) -> str:
+                    temperature: float = 0.9, top_k: Optional[int] = 50, top_p: float = 0.95) -> str:
     device = "cuda" if torch.cuda.is_available() else "cpu"
     stoi, itos = load_vocab(VOCAB_PKL)
     with open(CONFIG_JSON, "r", encoding="utf-8") as f:
@@ -782,7 +782,7 @@ with st.sidebar:
     src_mode = st.radio("Source du corpus", ["Upload (Drag & Drop)", "Chemin local"], index=0)
 
     if src_mode == "Upload (Drag & Drop)":
-        uploaded = st.file_uploader("Déposez votre fichier .txt (UTF-8)", type=["txt"], accept_multiple_files=False)
+        uploaded = st.file_uploader("Déposez votre fichier .txt (UTF-8)", type=["txt"], accept_multiple_files=True)
         target_name = st.text_input("Nom de sauvegarde (dans /data)", value="uploaded_corpus.txt")
         if uploaded is not None:
             saved = ensure_uploaded_saved(uploaded, os.path.join(DATA_DIR, target_name))
