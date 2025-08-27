@@ -1065,7 +1065,7 @@ with files_tab:
     try:
         import pandas as pd
         df = pd.DataFrame(rows).sort_values("size_bytes", ascending=False)
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(df, width="stretch")
     except Exception:
         st.write(rows)
 
