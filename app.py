@@ -757,7 +757,7 @@ if STREAMLIT_AVAILABLE:
             if _verify_password(pwd, u["salt"], u["hash"]):
                 st.session_state["auth_user"] = {"email": email, "role": u.get("role", "user"), "login_at": now_iso()}
                 st.success("Connexion réussie !")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Mot de passe incorrect.")
         return False
@@ -811,7 +811,7 @@ if STREAMLIT_AVAILABLE:
                 )
                 if st.button("Se déconnecter"):
                     st.session_state.pop("auth_user")
-                    st.experimental_rerun()
+                    st.rerun()
             return True
 
         # Pas connecté -> Tabs login/register
